@@ -51,8 +51,7 @@ app.get("/:url", (req, res) => {
 app.use(cors());
 app.use(express.json()); // Parse JSON payloads
 
-// Simulate a database (replace with real DB in production)
-let urls = [];
+
 
 
 let generateShortUrl = () => {
@@ -67,34 +66,7 @@ app.post('/api/save-url', (req, res) => {
         return res.status(400).json({ error: 'URL is required' });
     }
     console.log(originalUrl);
-    // console.log(Url.findOne({ originalUrl }));
-    // if (Url.findOne({ originalUrl : originalUrl }) != null) {
-    //     Url.findOne({ originalUrl }).then((data) => {
-    //         // console.log(data.originalUrl);
-    //         // console.log(data.shortUrl);
-    //         // const newUrl = new Url({ originalUrl: data.originalUrl, shortUrl: data.shortUrl })
-    //         return res.status(201).json({
-    //             message: 'URL saved successfully',
-    //             // url: newUrl,
-    //         });
 
-    //     }).catch((e) => {
-    //         console.log(e)
-    //     });
-
-    // } else {
-
-
-
-
-    //     try {
-    //         // Generate a short URL (simple random string for demo purposes)
-    //         // const shortUrl = Math.random().toString(36).substring(2, 8);
-
-    //         // Save to MongoDB
-    //         
-
-    // }
 
     Url.findOne({originalUrl : originalUrl}).then((data)=>{
         // console.log(data);

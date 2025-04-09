@@ -1,23 +1,12 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-// import Box from '@mui/material/Box';
-// index.js or App.js
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import './Form.css'
-// import TextField from '@mui/material/TextField';
 
-// import FilledInput from '@mui/material/FilledInput';
-
-// import InputLabel from '@mui/material/InputLabel';
-// import InputAdornment from '@mui/material/InputAdornment';
-
-// import FormControl from '@mui/material/FormControl';
-// import { Co2Sharp } from '@mui/icons-material';
-// import { connection } from 'mongoose';
-// import TextField from '@mui/material/TextField';
 
 function Form() {
     // const [url, setURL] = useState("");
