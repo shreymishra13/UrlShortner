@@ -1,4 +1,4 @@
-package com.snapURL.backend;
+package com.snapurl.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

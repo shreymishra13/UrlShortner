@@ -19,4 +19,10 @@ public class HealthCheckController {
 
 
     }
+
+    @GetMapping("/MongoDB")
+    public String getMongoCheck(){
+        log.info("Checking mongoDB health");
+        return "DataBase Connected successfully";
+    }
 }
