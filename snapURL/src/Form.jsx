@@ -37,7 +37,7 @@ function Form() {
         e.preventDefault(); // Prevent page reload
 
         try {
-            const response = await fetch('http://localhost:5000/api/save-url', {
+            const response = await fetch('http://localhost:8080/url/save', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
