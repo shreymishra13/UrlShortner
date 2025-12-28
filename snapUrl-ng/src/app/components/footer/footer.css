@@ -1,0 +1,37 @@
+#footer{
+    /* display: flex;
+    align-items: baseline;
+    background: pink; */
+ 
+    color: white;
+    /* margin-top: 170px; */
+
+    position: absolute;
+    bottom: -100px;
+    background-color: #6A1E55;
+
+    /* height: 150px; */
+}
+#logo{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+#logo li{
+    margin: 10px;
+    color: white;
+    
+}
+#logo li::after{
+    color: white;
+}
+#logo li:visited{
+    color: white;
+}
+.arizonia-regular {
+    font-family: "Arizonia", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+  }
+  
