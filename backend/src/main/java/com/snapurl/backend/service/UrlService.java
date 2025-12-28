@@ -7,8 +7,10 @@ import com.snapurl.backend.entity.UrlEntity;
 import com.snapurl.backend.repository.UrlRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Optional;
@@ -20,6 +22,9 @@ public class UrlService {
 
     @Autowired
     private UrlRepository urlRepository;
+
+    @Value("${app.public-base-url}")
+    private String baseUrl;
 
     public UrlResponse save(UrlRequest requestData){
 
@@ -51,7 +56,7 @@ public class UrlService {
 
             return new UrlResponse(
                     "URL already shortened",
-                    new UrlData(existingUrl.get().getShortUrl())
+                    new UrlData(baseUrl +"/url/"+existingUrl.get().getShortUrl())
             );
         }
 
@@ -59,14 +64,14 @@ public class UrlService {
         urlEntity.setLongUrl(requestData.getOriginalUrl());
         urlEntity.setDate(new Date());
         urlEntity.setShortUrl(generateShortUrl());
-        log.info("Data converted ot urlEntity form : " + urlEntity);
+        log.info("Data converted to urlEntity form : " + urlEntity);
 
         try{
             urlRepository.save(urlEntity);
             log.info("Data Successfully Saved in the DB");
             return new UrlResponse(
                     "Successfully Saved in the DB",
-                    new UrlData(urlEntity.getShortUrl())
+                    new UrlData(baseUrl +"/url/"+ urlEntity.getShortUrl())
 
             );
 
@@ -80,7 +85,17 @@ public class UrlService {
 
     }
     private String generateShortUrl() {
-        return "http://localhost:5000/" +
+        return
                 UUID.randomUUID().toString().substring(0, 6);
+    }
+
+    public String getOrginalUrl(String urlCode) {
+        log.info("Url Code recieved : "+ urlCode);
+//
+        Optional<UrlEntity> urlEntity = urlRepository.findByShortUrl(urlCode);
+        log.info("Url entity received from DB : "+urlEntity.toString());
+
+        log.info("Long url : " + urlEntity.get().getLongUrl());
+        return urlEntity.get().getLongUrl();
     }
 }

@@ -11,4 +11,5 @@ public interface UrlRepository extends MongoRepository<UrlEntity, String> {
     Optional<UrlEntity> findByLongUrl(String longUrl);
 
 
+    Optional<UrlEntity> findByShortUrl(String shortUrl);
 }
