@@ -1,0 +1,10 @@
+#main-form{
+    background-color: rgb(235, 214, 217);
+    width: 50%;
+    margin:5% auto 5%;
+
+    padding: 59px;
+    border: 3px solid rgb(118, 80, 125);
+    border-radius: 10px;
+
+}

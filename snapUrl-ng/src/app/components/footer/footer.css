@@ -7,7 +7,8 @@
     /* margin-top: 170px; */
 
     position: absolute;
-    bottom: -100px;
+    /* bottom: -100px; */
+    bottom: 0px;
     background-color: #6A1E55;
 
     /* height: 150px; */

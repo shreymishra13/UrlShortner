@@ -1,0 +1,20 @@
+<form class='text-center' id="main-form">
+
+                <div class="form-group">
+                    <label htmlFor="exampleInputEmail1" class="mb-3">Your URL here</label>
+                    <input type="url" class="form-control"  aria-describedby="emailHelp" placeholder="Paste your URL here" required [formControl]="originalUrl"  />
+
+                </div>
+
+
+                                <!-- {!shortUrlDisplay ? null :
+                    <p className='mt-5 alert alert-success'>{shortUrl} <button type='button' style={{marginLeft:"50px"}}className={` ml-5 btn ${isCopied? 'btn-success' : 'btn-light'}`} onClick={handleCopy}>
+                        <i className={`bi ${isCopied ? 'bi-check-circle' : 'bi-clipboard'} ml-5`}></i>
+                        </button>
+                    </p>}   
+                <button type='submit' className='btn btn-outline-info d-flex m-auto mt-5' >Shorten</button> -->
+
+               
+                <button type='submit' class='btn btn-outline-info d-flex m-auto mt-5' >Shorten</button>
+
+</form>
